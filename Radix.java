@@ -5,13 +5,12 @@ public class Radix {
   }
 
   public static int length(int n) {
-    int theNumber = Math.abs(n);
-    int digits = 0;
-    while (theNumber > 0) {
-      digits++;
-      theNumber /= 10;
+    if (n == 0) {
+      return 1;
+    } else if (n < 0) {
+      n *= -1;
     }
-    return digits;
+    return (int)(Math.log10(n) + 1);
   }
 
   public static void merge(MyLinkedList original, MyLinkedList[] buckets) {
