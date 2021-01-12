@@ -1,7 +1,8 @@
 public class Radix {
-  // public static int nth(int n, int col) {
-  //
-  // }
+  public static int nth(int n, int col) {
+    int toDivide = (int)Math.pow(10, col + 1);
+    return Math.abs((n % toDivide) / (toDivide / 10));
+  }
 
   public static int length(int n) {
     int theNumber = Math.abs(n);
@@ -13,10 +14,10 @@ public class Radix {
     return digits;
   }
 
-  // public static void merge(MyLinkedList original, MyLinkedList[] buckets) {
-  //   for (int i = 0; i < buckets.length; i++) {
-  //     original.extend(buckets[i]);
-  //   }
-  // }
+  public static void merge(MyLinkedList original, MyLinkedList[] buckets) {
+    for (int i = 0; i < buckets.length; i++) {
+      original.extend(buckets[i]);
+    }
+  }
 
 }
