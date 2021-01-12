@@ -25,5 +25,17 @@ public class Tester {
       posNumber *= 10;
       posNumberL = "" + posNumber;
     }
+
+    System.out.println("nth Digit Testing \n -------------------");
+    int someNumber = 123456789;
+    int theDigit = 9;
+    for (int i = 0; i < 9; i++) {
+      if (theDigit != Radix.nth(someNumber, i)) {
+        System.out.println("The number is " + someNumber);
+        System.out.println("Expected digit " + theDigit);
+        System.out.println("What we got: " + Radix.nth(someNumber, i));
+      }
+        theDigit--;
+    }
   }
 }
