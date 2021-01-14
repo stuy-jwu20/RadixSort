@@ -27,7 +27,7 @@ public class Radix {
         int currentNum = data.remove(0);
         int digitEnd = nth(currentNum, numLength);
         buckets[digitEnd].add(currentNum);
-        if (Radix.length(currentNum) > numLength + 1) {
+        if ((yes == false) && (Radix.length(currentNum) > numLength + 1)) {
           yes = true;
         }
       }
@@ -49,7 +49,7 @@ public class Radix {
         int currentNum = data.remove(0);
         int digitEnd = nth(currentNum, numLength)+9;
         buckets[digitEnd].add(currentNum);
-        if (Radix.length(currentNum) > numLength + 1) {
+        if ((yes == false) && (Radix.length(currentNum) > numLength + 1)) {
           yes = true;
         }
       }
