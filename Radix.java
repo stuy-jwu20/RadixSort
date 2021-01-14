@@ -41,12 +41,12 @@ public class Radix {
     SortableLinkedList zero = new SortableLinkedList();
     for (int i = 0; i < data.size(); i++) {
       int number = data.get(i);
-      if (num > 0) {
+      if (number > 0) {
         posNum.add(number);
-      } else if (num < 0) {
+      } else if (number < 0) {
         negNum.add(number * -1);
       } else {
-        zero.add(num);
+        zero.add(number);
       }
     }
     Radix.radixSortSimple(negNum);
