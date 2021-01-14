@@ -36,6 +36,28 @@ public class Radix {
   }
 
   public static void radixSort(SortableLinkedList data) {
-
+    SortableLinkedList negNum = new SortableLinkedList();
+    SortableLinkedList posNum = new SortableLinkedList();
+    SortableLinkedList zero = new SortableLinkedList();
+    for (int i = 0; i < data.size(); i++) {
+      int number = data.get(i);
+      if (num > 0) {
+        posNum.add(number);
+      } else if (num < 0) {
+        negNum.add(number * -1);
+      } else {
+        zero.add(num);
+      }
+    }
+    Radix.radixSortSimple(negNum);
+    Radix.radixSortSimple(posNum);
+    for (int i = 0; i < data.size(); i++) {
+      data.remove(i);
+    }
+    for (int i = negNum.size()-1; i >= 0; i--) {
+      data.add(negNum.get(i) * -1);
+    }
+    data.extend(zero);
+    data.extend(posNum);
   }
 }
